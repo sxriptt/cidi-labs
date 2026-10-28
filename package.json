@@ -1,0 +1,24 @@
+{
+  "name": "restful-booker-tests",
+  "version": "1.0.0",
+  "description": "QA Lead take-home: API and browser tests for Restful Booker Platform",
+  "scripts": {
+    "clean": "node -e \"for (const dir of ['test-results', 'playwright-report', 'blob-report']) require('fs').rmSync(dir, { recursive: true, force: true })\"",
+    "pretest": "npm run clean",
+    "pretest:api": "npm run clean",
+    "pretest:ui": "npm run clean",
+    "test": "playwright test",
+    "test:api": "playwright test --project=api",
+    "test:ui": "playwright test --project=ui",
+    "report": "playwright show-report",
+    "pretest:ui:mode": "npm run clean",
+    "test:ui:mode": "playwright test --ui"
+  },
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^26.6.5",
+    "typescript": "^7.0.2"
+  },
+  "private": true
+}
